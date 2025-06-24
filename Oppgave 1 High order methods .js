@@ -113,3 +113,29 @@ container.appendChild(katVareNavnHtmlUl);
 container.appendChild(horizontalLine);
 
 //? ---------- Case 1.4 ----------
+
+const harLuksusProdukt = products.some((produkt) => produkt.price > 1000);
+
+let luksushjørne = [];
+
+if (harLuksusProdukt) {
+   luksushjørne = products.filter((produkt) => produkt.price > 1000);
+}
+
+const luksushjørneTitle = document.createElement("h2");
+const luksushjørneHtmlUl = document.createElement("ul");
+
+const luksusProdukter = luksushjørne.forEach((produkt) => {
+   const li = document.createElement("li");
+   li.textContent = produkt.name;
+   luksushjørneHtmlUl.appendChild(li);
+});
+
+luksushjørneTitle.textContent = "Luksusproduktene i Alvas sortiment";
+container.appendChild(luksushjørneTitle);
+container.appendChild(luksushjørneHtmlUl);
+container.appendChild(horizontalLine);
+
+//? ---------- Case 1.5 ---------
+
+const alleVarerpris = products.reduce((total + varePris) => {});
