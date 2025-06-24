@@ -138,4 +138,14 @@ container.appendChild(horizontalLine);
 
 //? ---------- Case 1.5 ---------
 
-const alleVarerpris = products.reduce((total + varePris) => {});
+const alleVarerPris = products.reduce((total, varePris) => {
+   return total + varePris.price;
+}, 0);
+
+alleVarerPrisTitle = document.createElement("h2");
+alleVarerPrisHtmlP = document.createElement("P");
+
+alleVarerPrisTitle.textContent = "Totale kostnaden av alle produktene";
+alleVarerPrisHtmlP.textContent = alleVarerPris;
+container.appendChild(alleVarerPrisTitle);
+container.appendChild(alleVarerPrisHtmlP);
