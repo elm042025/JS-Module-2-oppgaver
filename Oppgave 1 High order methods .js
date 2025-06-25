@@ -53,7 +53,7 @@ const horizontalLine = document.createElement("hr");
 
 const vareUnder200 = products.filter(function (vare) {
    return vare.price <= 200;
-}); //*returnerer varer i arrayet "products" der "price" er mindre enn eller lik 200
+}); //! Returnerer elementer i arrayet "products" der "price" er mindre enn eller lik 200
 
 const vareUnder200HtmlUl = document.createElement("ul");
 const vareUnder200Title = document.createElement("h2");
@@ -72,6 +72,7 @@ container.appendChild(horizontalLine);
 //? ---------- Case 1.2 ----------
 
 const vareNavnArr = products.map(function (vareNavn) {
+   //! Returnerer et nytt arr med navn
    return vareNavn.name;
 });
 
@@ -92,7 +93,7 @@ container.appendChild(horizontalLine);
 
 const elektronikkVare = products
    .filter((vareKat) => {
-      return vareKat.category.includes("electronics");
+      return vareKat.category.includes("electronics"); //! Returnerer et filtrert arr med produkter med electronics kat
    })
    .map((katVareNavn) => {
       return katVareNavn.name;
@@ -114,7 +115,7 @@ container.appendChild(horizontalLine);
 
 //? ---------- Case 1.4 ----------
 
-const harLuksusProdukt = products.some((produkt) => produkt.price > 1000);
+const harLuksusProdukt = products.some((produkt) => produkt.price > 1000); //! Returnerer true eller false
 
 let luksushjørne = [];
 
@@ -139,6 +140,7 @@ container.appendChild(horizontalLine);
 //? ---------- Case 1.5 ---------
 
 const alleVarerPris = products.reduce((total, varePris) => {
+   //! Returnerer alle elementene redusert til et element (i dette tilfelle, plusset sammen)
    return total + varePris.price;
 }, 0);
 
